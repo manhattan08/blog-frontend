@@ -1,0 +1,72 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+.userName {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.userDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.additional {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.table {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+.table thead th {
+  vertical-align: center;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  padding: 10px 15px;
+  background: rgb(180, 150, 227);
+  font-size: 14px;
+}
+.table thead tr th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.table thead tr th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.table tbody td {
+  text-align: center;
+  border: none;
+  padding: 7px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: center;
+}
+.table tbody tr:nth-child(even){
+  background: rgb(196, 164, 245);
+}
+.table tbody tr:nth-child(odd){
+  background: rgb(205, 178, 247);
+}
+.table tbody tr td:first-child {
+  width: 80px;
+  border-radius: 8px 0 0 8px;
+}
+.table tbody tr td:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.table tbody tr td img {
+  width: 40px;
+  height: 40px;
+}

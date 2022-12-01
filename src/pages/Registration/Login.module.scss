@@ -1,0 +1,33 @@
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 50px auto;
+}
+.error {
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+}
+
+.field {
+  margin-bottom: 20px !important;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 30px !important;
+}
+
+.btn:hover {
+  border-radius: 20px;
+  transition: .2s linear;
+}
+
+.avatar {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}

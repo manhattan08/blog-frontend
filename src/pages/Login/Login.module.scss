@@ -1,0 +1,20 @@
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 50px auto;
+
+}
+.error {
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+}
+
+.button:hover {
+  border-radius: 20px;
+  transition: .2s;
+}
+.title {
+  text-align: center;
+}
