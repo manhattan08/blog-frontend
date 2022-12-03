@@ -11,21 +11,25 @@ import { Button } from "@mui/material";
 import axios from "../../axios";
 import { fetchCommentsByPost } from "../../redux/slices/posts";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAvatar, selectIsAdmin } from "../../redux/slices/auth";
+import { selectAvatar, selectIsAdmin, selectIsAuth } from "../../redux/slices/auth";
 import { useState } from "react";
 import DeleteIcon from "@mui/icons-material/Clear";
 import IconButton from "@mui/material/IconButton";
 
 export const SideComments = ({id}) => {
   const dispatch = useDispatch();
+
   const isAvatar = useSelector(selectAvatar);
   const isAdmin = useSelector(selectIsAdmin);
+  const isAuth = useSelector(selectIsAuth);
+
   const [body,setBody] = useState({body:""});
   const {comments} = useSelector(state => state.posts);
 
   React.useEffect(()=>{
     dispatch(fetchCommentsByPost(id))
   },[])
+
   const onSubmit = async () => {
     try{
       await axios.post(`/comment/${id}`,body)
@@ -36,13 +40,12 @@ export const SideComments = ({id}) => {
       alert("Your comment too small or big")
     }
   }
-
   const onClickRemove = async (ids) =>{
     await axios.delete(`/comment/${ids}`)
     await axios.patch(`/delete-comment/${id}`)
     dispatch(fetchCommentsByPost(id))
   }
-
+  console.log(isAdmin)
   return (
     <List>
       {comments.items.map((obj) => (
@@ -77,7 +80,7 @@ export const SideComments = ({id}) => {
               multiline
               fullWidth
             />
-            <Button onClick={onSubmit} variant="contained">Submit</Button>
+            <Button disabled={!isAuth} onClick={onSubmit} variant="contained">Submit</Button>
           </div>
         </div>
       </>
