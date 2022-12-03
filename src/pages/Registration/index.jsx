@@ -17,7 +17,7 @@ export const Registration = () => {
   const dispatch = useDispatch();
   const inputFileRef = useRef(null);
 
-  const { register, handleSubmit, formState:{errors,isValid}} = useForm({
+  const { register, handleSubmit, formState:{isValid}} = useForm({
     defaultValues:{
       username:"",
       email:"",
