@@ -10,6 +10,7 @@ import { Profile } from "./pages/Profile";
 import { AdminPanel } from "./pages/AdminPanel";
 import { TagsPage } from "./pages/TagsPage";
 import { Footer } from "./components/Footer";
+import { PageNotFound } from "./pages/PageNotFound";
 
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/registration" element={<Registration/>}/>
           <Route path="/admin-panel" element={<AdminPanel/>}/>
           <Route path="/tags/:name" element={<TagsPage/>}/>
+          <Route path='*' element={<PageNotFound/>}/>
         </Routes>
       </Container>
       <Footer />
